@@ -3,17 +3,19 @@
 include_once('../config/config.php');
 include('usuarios.php');
 
-if( isset($_POST) && !empty($_POST)){
-    $p = new usuario();
+$um = new Usuarioedit();
+$dum =$um->getOne($_GET['id']);
 
-    $save = $p ->save($_POST);
-    if($save){
-        $mensaje ='Usuario registrado correctamente';
-    }else{
-        $mensaje ='Fallo al registrar informacion, usuario ya existe';
+if(isset($_POST)$$ !empty($_POST)){
+    $update=$um->update($_POST);
+    if($update){
+        $mensaje='Datos actualizados correctamente';
+    } else{
+        $mensaje='Datos no fueron actualizados';
+
     }
-    
-}    
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -49,17 +51,17 @@ if( isset($_POST) && !empty($_POST)){
     <section class="section1">
         <form action="registro_usuarios.php" method="POST">
             <label for="Cedula">Cedula:</label>
-            <input type="text" id="usuario" placeholder='Cedula' name="usuario" required>
+            <input type="text" id="usuario" placeholder='Cedula' name="usuario" required value="<?=$dum->usuario?>">
             <label for="Nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder='Nombre' name="nombre" required>
+            <input type="text" id="nombre" placeholder='Nombre' name="nombre" required value="<?=$dum->nombre?>">
             <label for="Apellido">Apellido:</label>
-            <input type="text" id="apellido" placeholder='Apellido' name="apellido" required>
+            <input type="text" id="apellido" placeholder='Apellido' name="apellido" required value="<?=$dum->apellido?>">
             <label for="Nombre">Contraseña:</label>
-            <input type="password" id="contraseña" placeholder='Contraseña' name="contraseña" required>
+            <input type="password" id="contraseña" placeholder='Contraseña' name="contraseña" required value="<?=$dum->contraseña?>">
             <label for="Correo">Correo:</label>
-            <input type="text" id="correo" placeholder='Correo' name="correo" required>
+            <input type="text" id="correo" placeholder='Correo' name="correo" required value="<?=$dum->correo?>">
             <label for="Rol">Rol:</label>
-            <input type="text" id="rol" placeholder='Rol' name="rol" required>
+            <input type="text" id="rol" placeholder='Rol' name="rol" required value="<?=$dum->rol?>">
             <!-- <select name="Rol" id="rol">
                 <option value="Admin">Admin</option>
             </select> -->

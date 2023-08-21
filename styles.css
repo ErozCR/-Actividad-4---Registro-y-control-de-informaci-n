@@ -1,6 +1,7 @@
 body{
     font-family: 'PT Serif', serif;
     text-align: center;
+    margin: auto;
 }
 .section1{
     text-align: center;
@@ -45,14 +46,46 @@ input[type="submit"]:hover{
     background-color: rgb(77, 133, 236);
 }
 nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: auto;
-    height: 100px;
+    padding: 10px 20px; /* Espaciado interno */
     background: linear-gradient(30deg, blue, skyblue, royalblue, azure, blue);
 }
-nav ul {
-    list-style: none;
+
+
+
+a{
     text-decoration: none;
-    display:inline-block;
+    text-decoration-color: blanchedalmond;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: flex;
+    transition: 0.5s all;
+    padding: 10px 10px;
+    font-size: 16px;
+}
+nav ul li:hover {
+    background-color: white;
+    /*cuando paso por un elemento cambia de color en transicion*/
+    border-radius: 30px;
+}
+
+.img-logo {
+    max-width: 100px; /* Ancho máximo de la imagen del logo */
+            height: auto; /* Altura ajustada automáticamente */
+}
+
+nav ul {
+
+    display:inline-flex;
     position: relative;
 
 }
+
+
+
+

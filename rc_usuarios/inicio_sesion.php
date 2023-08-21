@@ -35,6 +35,8 @@ class UserSession extends Database {
     }
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +64,7 @@ class UserSession extends Database {
     <label for="contraseña">Contraseña:</label>
     <input type="password" id="contraseña" placeholder='Contraseña' name="contraseña" required>
     <input type="submit" value="Iniciar sesion">
+    
 
 </form>
 

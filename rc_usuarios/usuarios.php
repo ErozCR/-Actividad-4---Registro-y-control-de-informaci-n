@@ -43,6 +43,25 @@ class usuario{
         return mysqli_query($this->conexion,$sql);
     }
 
+    function getOne($id){
+
+    $sql="SELECT * FROM rc_usuarios WHERE id =$id";
+    return mysqli_query($this->conexion,$sql);
+    }
+
+    function update($params){
+
+        $usuario = $params['usuario'];
+        $nombre = $params['nombre'];
+        $apellido = $params['apellido'];
+        $contraseña = $params['contraseña'];
+        $correo = $params['correo'];
+        $rol = $params['rol'];
+
+        $update =" UPDATE rc_usuarios SET usuario='$usuario', nombre='$nombre',apellido='$apellido',contraseña='$contraseña',correo='$correo',rol='$rol' WHERE id = $id";
+        return mysqli_query($this->conexion,$update);
+
+    }
 
 }
 

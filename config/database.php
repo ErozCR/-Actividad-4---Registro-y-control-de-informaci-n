@@ -3,7 +3,7 @@
 class Database{
     public $host = 'localhost';// Servidor
     public $user ='root';// Usuario de phpmyadmin
-    public $password ='';// Contraseña phpmyadmin
+    public $password ='Daiver94042210964*';// Contraseña phpmyadmin
     public $db ='regcontrol';// Base de datos
     public $conexion;
 
